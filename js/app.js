@@ -70,7 +70,7 @@
   gameController.addEmitter( emitter1 );
   gameController.addEmitter( emitter2 );
 
-  globals.pizzaCount = 10;
+  globals.pizzaCount = 5;
 
   function randompizzaClass() {
     var classes = [ 'pizza1', 'pizza2', 'pizza3' ];
