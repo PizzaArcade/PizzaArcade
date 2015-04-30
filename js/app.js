@@ -5,9 +5,9 @@
   globals.gravity = 0.2;
   globals.width = gameController.element.offsetWidth;
   globals.height = gameController.element.offsetHeight;
-  globals.centerX = width / 2 - 75;
-  globals.centerY = height / 2 - 75;
-  globals.distance = 200;
+  globals.centerX = width / 2 - 40;
+  globals.centerY = height / 2 - 40;
+  globals.distance = 300;
 
   gameController
     .addBehavior( 'throbber', 'throbber', function() {
