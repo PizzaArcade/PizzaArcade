@@ -2,7 +2,7 @@
 
   var gameController = new GameController( document.getElementById('pizzapit') );
 
-  globals.gravity = 0.2;
+  globals.gravity = 0.3;
   globals.width = gameController.element.offsetWidth;
   globals.height = gameController.element.offsetHeight;
   globals.centerX = width / 2 - 40;
@@ -18,13 +18,13 @@
       var g = globals.gravity;
       this.velocity_y += g;
 
-      if ( this.y > globals.height + 200) {
+      if ( this.y > globals.height + 100) {
         // delete the sprite
         gameController.sprite_store.deleteSprite(this);
       }
     } )
     .addBehavior( 'rotation', 'pizza', function() {
-      this.distance = this.baseDistance + Math.sin(globals.gameController.ticks / 10 + this.index) * 20;
+      this.distance = this.baseDistance + Math.sin(globals.gameController.ticks / 20 + this.index) * 20;
       this.index += this.modifier;
 
       this.move_to(
