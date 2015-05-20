@@ -10,7 +10,7 @@
   globals.distance = 300;
 
   gameController
-    .addBehavior( 'throbber', 'throbber', function() {
+    .addBehavior( 'throbber', function() {
 
     } )
     .addBehavior( 'gravity-effect', 'bouncing-pizza', function() {
@@ -32,14 +32,14 @@
         globals.centerY + this.distance * Math.cos( this.index )
       );
 
-      this.setSpriteRotation( U.Math.rad2deg( this.index ));
+      this.setSpriteRotation( U.Math.rad2deg( this.index * 4 ));
     } );
 
   var emitter1 = new SpriteEmitter( gameController, {
         tags: [ 'bouncing-pizza' ],
         elementClass: 'little-pizza',
         angle: -90,
-        speed: 30,
+        speed: 20,
         rate: 1,
         concurrency: 3,
         splay: 30,
@@ -53,7 +53,7 @@
         tags: [ 'bouncing-pizza' ],
         elementClass: 'little-pizza2',
         angle: -90,
-        speed: 30,
+        speed: 20,
         rate: 1,
         concurrency: 3,
         splay: 30,
@@ -81,7 +81,7 @@
       j = 0;
 
   for ( j = 0; j < 5; j++ ) {
-    var pizzaCount = globals.pizzaCount + ( j * Math.random() * 8 );
+    var pizzaCount = globals.pizzaCount + ( j * Math.random() * 2 );
     for ( i = 0; i < pizzaCount; i++ ) {
       var pizza_ele = document.createElement('div'),
           pizzaIndex = ( 2 * Math.PI ) / pizzaCount * i,
@@ -98,7 +98,7 @@
       pizza.distance = distance + Math.random() * 20;
       pizza.modifier = 0.015 + (Math.random() - 0.5) / 100;
       pizza.baseDistance = distance;
-      pizza.setSpriteRotation( U.Math.rad2deg(pizza.index) );
+      pizza.setSpriteRotation( U.Math.rad2deg(Math.random()*3) );
       gameController.addSprite( pizza );
     }
   }
